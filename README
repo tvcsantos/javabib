@@ -1,0 +1,59 @@
+
+20030320  - initial version.
+20030327  - some enhancements, i.e. parsing person lists (as in author)
+            also, cross-reference expansion, macro (@string) expansion.
+20030329  - major reorganization, various bugfixes, and yes: better documentation!
+20030331  - bugfix: Field values like {Johannes Henkel} would be parsed as
+            {{Johannes Henkel}}
+20031029  - improvement to Expansion mechanism: There is now an interface method
+	    getExceptions() that works just like the one for the parser. The default
+	    behavior is the old behavior (all exceptions are thrown), but you can
+	    enable the fault tolerant behavior by setting the throwAllExpansionExceptions
+	    flag to false.
+20031109  - bugfix: the parser now accepts entries with an empty citation key.
+            Thanks to Nizar Batada for the test case.
+20031214  - better performance - API unchanged
+20031214b - bugfix: content missing in {content} - sorry, I guess this was a
+            real showstopper bug ...
+20040510  - bugfix: '~' is now interpreted as white space
+            when persons (authors / editors) are being parsed.
+            Thanks to Wolf Siberski for sending a patch.
+	    some performance tweaks (interned some strings, improved parser)
+20040801  - many assertions to make debugging your application a bit easier
+	  - bugfixes for rendering PersonLists (author, editor) are rendered
+	  - an improved parser for PersonLists
+	  - optional support for multiple values for the same field within
+	    an entry
+	  - lots of little bug fixes
+	  - much of this was done on the road between Boulder, Colorado and
+	    West Yellowstone, Montana. I'm not kidding.
+20070915  - Moved this project into code.google.com. The code is unmodified
+            for now.
+
+This is a bibtex parser written in Java.
+
+To try this parser out, just grab the javabib-bin.jar file and do a 
+
+java -jar javabib-bin.jar
+
+to get some help.
+
+It's hand-written, since bibtex is such an insane language. I actually
+tried to write a parser using ANTLR, but it was a pain. Essentially, you would
+need a different lexer for each symbol, and that's overkill.
+
+The parser has been was tested extensively using a large collection of bibtex
+files (245 Megs) from the University of Utah (ftp://ftp.math.utah.edu/pub/tex/bib).
+The only parsing errors I experienced were errors in the input and could
+be identified easily.
+
+The API is somewhat stable now (well, that's what I feel).
+It's quite clean (at least I think it is) - check out the javadoc!
+
+I used Sun's JDK 1.4.1 to develop this. If you try to run this with earlier
+versions, your mileage may vary (you'll at least have to recompile).
+
+Feel free to send in improvements, comments, bug-reports.
+
+License: GPL.
+Author: Johannes Henkel (jhenkel@jhenkel.de)
