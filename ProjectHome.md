@@ -1,0 +1,1 @@
+This is a handwritten parser for the bibtex format, which is typically used when generating bibliographies with LaTeX. The parsed bibtex entries are accessible via a simple API.
