@@ -17,7 +17,7 @@ import java.util.HashSet;
  */
 public final class BibtexStandardMacros {
 
-	private static HashSet monthAbbr = new HashSet();
+	private static final HashSet monthAbbr = new HashSet();
 	static {
 		monthAbbr.addAll(
 			Arrays.asList(
@@ -40,7 +40,7 @@ public final class BibtexStandardMacros {
 	    assert string!=null: "string parameter may not be null.";
 		return monthAbbr.contains(string);
 	}
-	private static HashMap standardMacros = new HashMap();
+	private static final HashMap standardMacros = new HashMap();
 	static {
 		standardMacros.put("jan", "January");
 		standardMacros.put("feb", "February");

@@ -56,6 +56,7 @@ public abstract class BibtexNode {
 	
 	abstract public void printBibtex(PrintWriter writer);
 
+    @Override
 	public String toString(){
 		StringWriter stringWriter = new StringWriter();
 		PrintWriter out = new PrintWriter(stringWriter);

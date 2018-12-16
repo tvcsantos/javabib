@@ -99,7 +99,7 @@ public final class MacroReferenceExpander extends AbstractExpander implements Ex
 				bibtexStringDefinition.setValue(simplifiedValue);
 				if (removeMacros) {
 					bibtexFile.removeEntry(bibtexStringDefinition);
-				};
+				}
 				stringKey2StringValue.put(bibtexStringDefinition.getKey().toLowerCase(), simplifiedValue);
 
 			} else if (abstractEntry instanceof BibtexPreamble) {
